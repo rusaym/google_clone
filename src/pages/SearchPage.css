@@ -1,0 +1,50 @@
+.searchPageHeader {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  align-items: flex-start;
+  padding: 30px;
+  border-bottom: 1px solid lightgray;
+}
+
+.searchPageLogo {
+  object-fit: contain;
+  height: 50px;
+  margin-right: 50px;
+}
+
+.searchPageHeaderBody > .search > .searchInput {
+  margin-top: 0;
+  width: unset;
+  margin: unset;
+  max-width: unset;
+}
+
+.searchPageOptions {
+  display: flex;
+  align-items: center;
+  color: grey;
+}
+
+.searchPageOption {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.searchPageOptions a,
+.searchPageOptionsRight a {
+  text-decoration: none;
+  color: grey;
+}
+
+.searchPageOptionsLeft,
+.searchPageOptionsRight {
+  display: flex;
+}
+
+.searchPageOptionsRight {
+  margin-left: 80px;
+}
