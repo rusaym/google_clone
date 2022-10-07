@@ -34,6 +34,10 @@
   margin-right: 20px;
 }
 
+.searchPageOption a {
+  margin-left: 5px;
+}
+
 .searchPageOptions a,
 .searchPageOptionsRight a {
   text-decoration: none;
@@ -47,4 +51,43 @@
 
 .searchPageOptionsRight {
   margin-left: 80px;
+}
+
+.searchPageResult {
+  margin: 40px 0;
+}
+
+.searchPageResultsCount {
+  color: #70757a;
+  font-size: 14px;
+}
+
+.searchPageResults {
+  max-width: 650px;
+  margin-top: 20px;
+  margin-left: 240px;
+  margin-bottom: 100px;
+}
+
+.searchPageResultTitle {
+  text-decoration: none;
+}
+
+.searchPageResultTitle:hover {
+  text-decoration: underline;
+}
+
+.searchPageResultTitle > h2 {
+  font-weight: 500;
+}
+
+.searchPageResultSnippet {
+  margin-top: 10px;
+}
+
+.searchPageResultImage {
+  object-fit: contain;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
 }

@@ -16,7 +16,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 function SearchPage() {
   const [{ term }, dispatch] = useStateValue()
   const { data } = useGoogleSearch(term)
-
+  console.log(data)
   return (
     <div className='searchPage'>
       <div className='searchPageHeader'>
@@ -28,7 +28,7 @@ function SearchPage() {
           />
         </Link>
         <div className='searchPageHeaderBody'>
-          <Search hideButtons />
+          <Search hideButtons defaultValue={term} />
           <div className='searchPageOptions'>
             <div className='searchPageOptionsLeft'>
               <div className='searchPageOption'>
@@ -68,7 +68,37 @@ function SearchPage() {
         </div>
       </div>
 
-      <div className='searchPageResults'></div>
+      {term && (
+        <div className='searchPageResults'>
+          <p className='searchPageResultsCount'>
+            About {data?.searchInformation.formattedTotalResults} results (
+            {data?.searchInformation.formattedSearchTime} seconds) for {term}
+          </p>
+          {data?.items.map((item) => (
+            <div className='searchPageResult'>
+              <a href={item.link} target='_blank'>
+                {item.pagemap?.cse_image?.length > 0 &&
+                  item.pagemap?.cse_image[0]?.src && (
+                    <img
+                      className='searchPageResultImage'
+                      src={item.pagemap?.cse_image[0]?.src}
+                      alt=''
+                    />
+                  )}
+                {item.displayLink}
+              </a>
+              <a
+                href={item.link}
+                target='_blank'
+                className='searchPageResultTitle'
+              >
+                <h2>{item.title}</h2>
+              </a>
+              <p className='searchPageResultSnippet'>{item.snippet}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
